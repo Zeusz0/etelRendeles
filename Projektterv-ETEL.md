@@ -190,7 +190,7 @@ A munkát `Halmai Dániel` koordinálja. `Fő feladata, hogy folyamatosan egyezt
  - `Időpont: 2021.09.27.`
  - `Hely: Nyugi kert - Szeged, Vitéz utca 28.`
  - `Résztvevők: Halmai Dániel, Fülöp Németh András István, Kohl Viktória (késett 10 percet), Kiri Attila István (késett 50 percet), Sárosi Eszter (késett 50 percet)`
- - `Érintett témák: A dukumentáció elkezdése, A csapat figyelmeztetése a pontosságra`
+ - `Érintett témák: A dokumentáció elkezdése, A csapat figyelmeztetése a pontosságra`
 
 `3. Megbeszélés:`
  - `Időpont: 2021.10.03.`
