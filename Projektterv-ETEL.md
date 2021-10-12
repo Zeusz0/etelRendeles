@@ -24,12 +24,12 @@ feketével írt részek törlése tilos, azok közösek.
 
 | Verzió | Szerző(k)                | Dátum        | Státusz         | Megjegyzés                                                    |
 |--------|--------------------------|--------------|-----------------|---------------------------------------------------------------|
-| ``  | `Teszt Elek`             | `` | ``      | ``                                              |
-| ``  | `Remek Elek, Teszt Elek` | `2021-10-04` | `Előterjesztés` | `A projekt menedzsere jónak találta`                          |
-| ``  | `Lev Elek`               | `2021-10-11` | `Elfogadott`    | `Apróbb átszervezések a kommentek alapján`                    |
-| ``  | `Remek Elek`             | `2021-10-15` | `Tervezet`      | `Személyes felelősségek átszervezése, Gantt chart módosítása` |
-| ``  | `Lev Elek`               | `2021-10-18` | `Előterjesztés` | `2. mérföldkő további módosításai`                            |
-| ``  | `Remek Elek`             | `2021-10-25` | `Elfogadott`    | `Leírások pontosítása a megjegyzések alapján`                 |
+| ``  | ``             | `` | ``      | ``                                              |
+| ``  | `` | `` | `` | ``                          |
+| ``  | ``               | `` | ``    | ``                    |
+| ``  | ``             | `` | ``      | `` |
+| ``  | ``               | `` | `` | ``                            |
+| ``  | ``             | `` | ``    | ``                 |
 
 
 Státusz osztályozás:
