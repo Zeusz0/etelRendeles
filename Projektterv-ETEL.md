@@ -123,7 +123,7 @@ A projekt a következő emberekből áll:
 |-------------------------------------------------------------------------------------------------------------------|-----------------|----------------------------|
 | Megrendelő                                                                                                        | `Dr. Pflanzner Tamás` | `tamas.pflanzner@inf.u-szeged.hu`  |
 | Felelősségek: Projekt menedzser, Back end fejlesztő 									| `Halmai Dániel`    | `h983118@stud.u-szeged.hu` |
-| `Projekt tag` Front end fejlesztő és webdesigner                                				       | `Kohl Viktória`    | `@stud.u-szeged.hu` |
+| `Projekt tag` Front end fejlesztő és webdesigner                                				       | `Kohl Viktória`    | `h983733@stud.u-szeged.hu` |
 | `Projekt tag` Devops szakértő                                                                                                    | `Fülöp-Németh András István`      | `h982866@stud.u-szeged.hu` |
 | `Projekt tag` UIX designer                                                                                                   | `Kiri Attila István`      | `h983606@stud.u-szeged.hu` |
 | `Projekt tag` Front end fejlesztő és webdesigner                                                                                                     | `Sárosi Eszter`      | `h985646@stud.u-szeged.hu` |
@@ -195,7 +195,7 @@ A munkát `Halmai Dániel` koordinálja. `Fő feladata, hogy folyamatosan egyezt
 `3. Megbeszélés:`
  - `Időpont: 2021.10.03.`
  - `Hely: Discord`
- - `Résztvevők: Halmai Dániel, Fülöp Németh András István, Kiri Attila István, Sárosi Eszter, Rácz-Komlósi Zénó `
+ - `Résztvevők: Halmai Dániel, Fülöp Németh András István, Kiri Attila István, Sárosi Eszter, Rácz-Komlósi Zénó , Kohl Viktória`
  - `Érintett témák: Projektterv`
 
 ```
