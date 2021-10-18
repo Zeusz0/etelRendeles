@@ -143,11 +143,6 @@ A projekt hetente ülésezik, hogy megvitassák az azt megelőző hét problém�
  - Résztvevők: Halmai Dániel, Fülöp Németh András István, Kiri Attila István, Sárosi Eszter, Rácz-Komlósi Zénó , Kohl Viktória
  - Érintett témák: Projektterv
 
-4. Megbeszélés:
- - Időpont: 2021.10.17.
- - Hely: Discord
- - Résztvevők: Halmai Dániel, Fülöp Németh András István, Kiri Attila István, Sárosi Eszter, Rácz-Komlósi Zénó , Kohl Viktória
- - Érintett témák: 2. mérföldkő feladatainak átbeszélése
 
 
 ### 7.3. Minőségbiztosítás
