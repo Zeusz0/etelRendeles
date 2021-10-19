@@ -445,7 +445,7 @@ Erőforrásigény:  0.3 személynap
 
 ## 10. Részletes időbeosztás
 
-![image](./gantt_etel.JPG)
+![image](./diagrammok,kepernyokep/gantt_etel.JPG)
 
 
 ## 11. Projekt költségvetés
