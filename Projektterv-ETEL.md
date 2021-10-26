@@ -42,10 +42,11 @@ A rendszernek képesnek kell lennie arra, hogy a felhasználók és a partner é
 ### 3.2. Funkcionális követelmények
 
  - Felhasználói munkamenet megvalósítása több jogosultsági szinttel (admin, partner, vásárló)
- - Felhasználók kezelése (CRUD)
- - Partnerek kezelése (CRUD)
- - Ételek kezelése (CRUD)
- - Rendelések kezelése (CRUD)
+ - Admin töröl, létrehoz és kezeli a partnereket és a felhasználókat
+ - Felhasználók kezelése , be- és kijelentkezés, regisztráció, rendelés(CRUD)
+ - Partnerek kezelése, be- és kijelentkezés, regisztráci (CRUD)
+ - Ételek kezelése, kínálat frissítése (CRUD)
+ - Rendelések kezelése, törlés, módosítás, fizetés(CRUD)
  - Email-es kiértesítés új rendelések esetén a vásárlónak
  - Kapcsolatfelvételi űrlap biztosítása új cégek számára
  
