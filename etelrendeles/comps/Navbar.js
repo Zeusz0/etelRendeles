@@ -16,6 +16,9 @@ const Navbar = () => {
       <Link href="/forms/Registration">
         <a>Registration</a> 
       </Link>
+      <Link href="/forms/Login">
+        <a>Login</a> 
+      </Link>
     </nav>
   );
 };
