@@ -1,9 +1,17 @@
+import Head from "next/head";
+
 const Registration = () => {
   return (
-    <div>
-      <h1>Registration</h1>
-    </div>
-  );
-};
+    <>
+      <Head>
+        <title>Ételrendelés | Regisztráció</title>
+        <meta name="keywords" content="Etelrendeles, Regisztracio" />
+      </Head>
+      <div>
+        <h1>Registration</h1>
+      </div>
+    </>
+  )
+}
 
 export default Registration;
