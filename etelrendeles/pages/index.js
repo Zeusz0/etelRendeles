@@ -12,15 +12,11 @@ export default function Home() {
         <meta name="keywords" content="Etelrendeles, Főoldal" />
       </Head>
       <div>
-        <h1>Kezdolap</h1> {/* styles.title stílus beállítása */}
+        <h1 className="title">Kezdolap</h1> {/* styles.title stílus beállítása */}
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam efficitur
-          orci nec erat efficitur, sit amet bibendum purus eleifend. In vestibulum
-          erat nulla, eu ultrices eros pharetra ac. Praesent ornare at est eu
-          porta. Praesent sollicitudin ipsum sapien, et tempus ex vestibulum quis.
-          Praesent tincidunt eu est vitae euismod. Vestibulum dictum bibendum
-          libero, non tempus sem viverra ac. Pellentesque placerat faucibus quam.
-          Morbi nec molestie nisi. Curabitur at nulla nulla.
+          Halihó!
+          Megéheztél? Vagy csak egy kis desszertre vágysz délután? Esetleg az esti bulihoz kéne egy hatalmas adag pizza?
+          Bármilyen napszakban állnak rendelkezésedre partnereink, válogass kedvedre és élvezd az ételt a saját otthonodban.
         </p>
       </div>
     </>
