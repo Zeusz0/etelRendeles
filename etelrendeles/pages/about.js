@@ -10,13 +10,18 @@ const About = () => {
       <div>
         <h1>Rólunk</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam efficitur
-          orci nec erat efficitur, sit amet bibendum purus eleifend. In vestibulum
-          erat nulla, eu ultrices eros pharetra ac. Praesent ornare at est eu
-          porta. Praesent sollicitudin ipsum sapien, et tempus ex vestibulum quis.
-          Praesent tincidunt eu est vitae euismod. Vestibulum dictum bibendum
-          libero, non tempus sem viverra ac. Pellentesque placerat faucibus quam.
-          Morbi nec molestie nisi. Curabitur at nulla nulla.
+        A mai rohanó világban cégünk szeretné megkönnyíteni az éhes emberek számára, 
+        hogy éttermi partnereinknél könnyedén találjanak nagyszerű, sokszínű ételeket, 
+        amelyeket a futárszolgálatunk tagjai időben kiszállítanak. 
+        </p>
+        <p>
+        Kapcsolatot építünk ki éttermek és kiskereskedők között, akik éleleket szeretnének készíteni és eladni,
+        a futárok között, akik keresni szeretnének ezen termékek kiszállításával, 
+        és az ügyfelek között, akik időt és energiát szeretnének spórolni, hogy az élet fontosabb dolgaira összpontosíthassanak.
+        Így városainkat is jobb hellyé tehetjük. Ezalatt pedig boldogabb embereket értünk. 
+        Boldogabb kisvállalkozásokat, amelyek több üzlettel rendelkeznek, és több embert tudnak foglalkoztatni, 
+        boldogabb futárokat, akiknek rugalmas módja van keresni, amikor úgy döntenek, 
+        boldogabb ügyfeleket, akik most könnyen hozzáférhetnek nagyszerű ételekhez. 
         </p>
       </div>
     </>
