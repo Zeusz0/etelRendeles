@@ -1,5 +1,5 @@
 const Footer = () => {
-  return <div>Copyright 2021 Csip-Csiripp Fejlesztőcsapat</div>; // Ennek <div> helyett< footer> nek kell lennie
+  return <footer>Copyright 2021 Csip-Csiripp Fejlesztőcsapat</footer>; 
 };
 
 export default Footer;
