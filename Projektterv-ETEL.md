@@ -144,6 +144,24 @@ A projekt hetente ülésezik, hogy megvitassák az azt megelőző hét problém�
  - Résztvevők: Halmai Dániel, Fülöp Németh András István, Kiri Attila István, Sárosi Eszter, Rácz-Komlósi Zénó , Kohl Viktória
  - Érintett témák: Projektterv
 
+4. Megbeszélés:
+ - Időpont: 2021.10.14.
+ - Hely: Halmai Rezidencia
+ - Résztvevők: Halmai Dániel, Fülöp Németh András István, Kiri Attila István, Sárosi Eszter, Rácz-Komlósi Zénó , Kohl Viktória
+ - Érintett témák: Csapatépítés, gondolkodás a projektről, Brainstorming
+
+5. Megbeszélés:
+ - Időpont: 2021.10.29.
+ - Hely: Discord
+ - Résztvevők: Halmai Dániel, Fülöp Németh András István, Kiri Attila István, Sárosi Eszter, Rácz-Komlósi Zénó , Kohl Viktória
+ - Érintett témák: 1. mérföldkő feladatainak újra átbeszélése
+
+6. Megbeszélés:
+ - Időpont: 2021.11.08.
+ - Hely: Nyugi kert - Szeged, Vitéz utca 28.
+ - Résztvevők: Halmai Dániel, Fülöp Németh András István, Kiri Attila István, Sárosi Eszter, Rácz-Komlósi Zénó , Kohl Viktória
+ - Érintett témák: Az eddig teljesített feladatok átbeszélése, a jövőbeli feladatok átbeszélése 
+
 
 
 ### 7.3. Minőségbiztosítás
