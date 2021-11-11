@@ -1,6 +1,10 @@
 import Head from "next/head";
+import { useState } from "react";
 
 const Registration = () => {
+  const [formData, setFormData] = useState({})
+
+
   return (
     <>
       <Head>
@@ -15,3 +19,9 @@ const Registration = () => {
 }
 
 export default Registration;
+
+export async function getServerSideProps(){
+
+}
+
+
