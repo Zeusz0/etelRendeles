@@ -27,6 +27,7 @@ model menu {
 
 model aru {
   id    Int     @id @default(autoincrement())
+  partner_id Int
   nev String
   leiras  String
   ar  Int
