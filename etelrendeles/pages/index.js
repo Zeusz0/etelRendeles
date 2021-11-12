@@ -12,7 +12,7 @@ export default function Home() {
         <meta name="keywords" content="Etelrendeles, Főoldal" />
       </Head>
       <div>
-        <h1 className={styles.title}>Kezdolap</h1>
+        <h1 className={styles.title}>Kezdőlap</h1>
         <p>
           Halihó!
           Megéheztél? Vagy csak egy kis desszertre vágysz délután? Esetleg az esti bulihoz kéne egy hatalmas adag pizza?
