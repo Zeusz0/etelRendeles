@@ -15,8 +15,8 @@ model felhasznalo{
   cim String
   szamlazasi_cim String
   email String
-  szerep String
-  admin String
+  partner Boolean @default(false)
+  admin Boolean @default(false)
 }
 
 
