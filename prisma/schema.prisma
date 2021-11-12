@@ -7,14 +7,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-enum Role
-{
-  USER 
-  ADMIN 
-  DEVELOPER
-
-}
-
 model felhasznalo{
   id Int @id @default(autoincrement())
   vezetek_nev String
@@ -23,8 +15,8 @@ model felhasznalo{
   cim String
   szamlazasi_cim String
   email String
-  szerep String /* Vásárló vagy partner*/
-  admin Role @default(USER)
+  szerep String
+  admin String
 }
 
 
