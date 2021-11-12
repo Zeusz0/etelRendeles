@@ -8,7 +8,7 @@ const Login = () => {
           <meta name="keywords" content="Etelrendeles, Bejelentkezes"/>
         </Head>
         <div>
-            <h1>Login</h1>
+            <h1>Bejelentkezés</h1>
         </div>
       </>
      );

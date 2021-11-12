@@ -8,7 +8,7 @@ const Registration = () => {
         <meta name="keywords" content="Etelrendeles, Regisztracio" />
       </Head>
       <div>
-        <h1>Registration</h1>
+        <h1>Regisztráció</h1>
       </div>
     </>
   )
