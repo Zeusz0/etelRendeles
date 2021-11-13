@@ -14,11 +14,26 @@ model felhasznalo{
   telefonszam String
   cim String
   szamlazasi_cim String
-  email String
+  email String?   @unique
   partner Boolean @default(false)
   admin Boolean @default(false)
 }
 
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         felhasznalo     @relation(fields: [id], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
 
 model menu {
   id    Int     @id @default(autoincrement())
@@ -31,7 +46,7 @@ model aru {
   nev String
   leiras  String
   ar  Int
-  kep String
+  kep String?
 }
 
 model rendeles {
