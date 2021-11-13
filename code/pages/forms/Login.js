@@ -9,6 +9,7 @@ const Login = () => {
         </Head>
         <div>
             <h1>Bejelentkezés</h1>
+            <h2>Jelentkezz be </h2>
         </div>
       </>
      );
