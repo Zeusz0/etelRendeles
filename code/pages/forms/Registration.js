@@ -39,7 +39,7 @@ const Registration = ({ data }) => {
 export default Registration;
 
 export async function getServerSideProps() {
-  const users = await prisma.felhasznalok.findMany();
+  const users = await prisma.aru.findMany();
 
   return {
     props: {
