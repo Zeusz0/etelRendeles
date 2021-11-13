@@ -20,7 +20,7 @@ const Registration = ({ data }) => {
         <h1>Regisztrált felhasználóink: </h1>
         <ul>
           {data.map((item) => (
-            <li key="item.id">{item.kategoriak}</li>
+            <li key="item.id">{item.nev}</li>
           ))}
         </ul>
 
