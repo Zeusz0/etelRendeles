@@ -21,7 +21,7 @@ const Registration = ({data}) => {
         <h1>Regisztrált felhasználóink: </h1>
         <ul>
           {data.map(item =>(
-            <li key="item.id">{item.vezetek_nev}</li>
+            <li key="item.id">{item.nev}</li>
           ))}
         </ul>
             
