@@ -1,12 +1,11 @@
 import Head from "next/head";
 import { useState } from "react";
-import {PrismaClient} from '@prisma/client'
+import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-const Registration = ({data}) => {
-
-  const [formData, setFormData] = useState({})
+const Registration = ({ data }) => {
+  const [formData, setFormData] = useState({});
 
   return (
     <>
@@ -20,11 +19,11 @@ const Registration = ({data}) => {
       <div>
         <h1>Regisztrált felhasználóink: </h1>
         <ul>
-          {data.map(item =>(
-            <li key="item.id">{item.nev}</li>
+          {data.map((item) => (
+            <li key="item.id">{item.kategoriak}</li>
           ))}
         </ul>
-            
+
         {/*<form onSubmit={saveMovie}>
                     <input type="text" placeholder="Title" name="title" onChange={e => setFormData({ ...formData, title: e.target.value })}/>
                     <input type="text" placeholder="Year" name="year" onChange={e => setFormData({ ...formData, year: +e.target.value })} />
@@ -34,20 +33,17 @@ const Registration = ({data}) => {
           </form> */}
       </div>
     </>
-  )
-}
+  );
+};
 
 export default Registration;
 
-export async function getServerSideProps(){
+export async function getServerSideProps() {
+  const users = await prisma.felhasznalok.findMany();
 
-  const users = await prisma.felhasznalo.findMany();
-
-  return{
+  return {
     props: {
-      data: users
-    }
-  }
+      data: users,
+    },
+  };
 }
-
-
