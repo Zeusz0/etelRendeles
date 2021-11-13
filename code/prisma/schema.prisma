@@ -21,10 +21,11 @@ model felhasznalo{
 
 model Session {
   id           String   @id @default(cuid())
+  userId       Int
   sessionToken String   @unique
   userId       String
   expires      DateTime
-  user         felhasznalo     @relation(fields: [id], references: [id], onDelete: Cascade)
+  user         felhasznalo     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model VerificationToken {
