@@ -9,14 +9,14 @@ datasource db {
 
 model felhasznalo{
   id Int @id @default(autoincrement())
-  vezetek_nev String
-  kereszt_nev String
+  nev String
   telefonszam String
   cim String
   szamlazasi_cim String
   email String?   @unique
   partner Boolean @default(false)
   admin Boolean @default(false)
+  sessions      Session[]
 }
 
 model Session {
