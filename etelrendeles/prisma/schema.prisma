@@ -1,0 +1,54 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role
+{
+  USER 
+  ADMIN 
+  DEVELOPER
+
+}
+
+model felhasznalo{
+  id Int @id @default(autoincrement())
+  vezetek_nev String
+  kereszt_nev String
+  telefonszam String
+  cim String
+  szamlazasi_cim String
+  email String
+  szerep String /* Vásárló vagy partner*/
+  admin Role @default(USER)
+}
+
+
+model menu {
+  id    Int     @id @default(autoincrement())
+  kategoriak String
+}
+
+model aru {
+  id    Int     @id @default(autoincrement())
+  nev String
+  leiras  String
+  ar  Int
+  kep String
+}
+
+model rendeles {
+  id    Int     @id @default(autoincrement())
+  termekek String
+  kisszalitasi_dij  Int
+  borravalo  Int
+  aruosszeg  Int
+  osszeg  Int
+}
