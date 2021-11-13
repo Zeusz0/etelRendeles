@@ -7,7 +7,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model felhasznalo{
+model felhasznalok{
   id Int @id @default(autoincrement())
   nev String
   telefonszam String
@@ -24,7 +24,7 @@ model Session {
   userId       Int
   sessionToken String   @unique
   expires      DateTime
-  user         felhasznalo     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user         felhasznalok     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model VerificationToken {
