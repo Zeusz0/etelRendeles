@@ -1,10 +1,10 @@
 import Head from "next/head";
 import React, {useState} from "react";
 import {PrismaClient} from "@prisma/client";
-import { withProtected } from "../hook/route"
+import { withPublic } from "../hook/route"
 
 
-const prisma = new PrismaClient();
+// const prisma = new PrismaClient();
 
 function Registration({auth}, data){
 
@@ -14,7 +14,7 @@ function Registration({auth}, data){
 
     async function registration(e) {
         e.preventDefault()
-        const response = await fetch('/api/felhasznalok', {
+        const response = await fetch('/api/auth/sign-up', {
             method: 'POST',
             body: JSON.stringify(formData)
         })
@@ -32,18 +32,16 @@ function Registration({auth}, data){
           </div>
           <div>
               <form onSubmit={registration}>
-                  <input type="text" placeholder="Név" name="nev"
-                         onChange={e => setFormData({...formData, nev: e.target.value})}/>
+                  <input type="text" placeholder="Név" name="name"
+                         onChange={e => setFormData({...formData, name: e.target.value})}/>
                   <input type="email" placeholder="E-mail cím" name="email"
                          onChange={e => setFormData({...formData, email: e.target.value})}/>
+                  <input type="password" placeholder="Jelszó" name="password"
+                         onChange={e => setFormData({...formData, password: e.target.value})}/>
+                  <input type="password" placeholder="Jelszó mégegyszer" name="password_again"
+                         onChange={e => setFormData({...formData, password_again: e.target.value})}/>
 
-                  {/*TODO kellene jelszó az adatbázisba F*/}
-                  {/*<input type="jelszo" placeholder="Jelszó" name="jelszo"*/}
-                  {/*       onChange={e => setFormData({...formData, jelszo: e.target.value})}/>*/}
-                  {/*<input type="jelszo_ujra" placeholder="Jelszó mégegyszer" name="jelszo_ujra"*/}
-                  {/*       onChange={e => setFormData({...formData, jelszo_ujra: e.target.value})}/>*/}
-
-                  <input type="tel" placeholder="Telefonszám" name="telefonszam"
+                  <input type="tel" placeholder="Telefonszám" name="tel"
                          onChange={e => setFormData({...formData, telefonszam: e.target.value})}/>
                   <textarea name="cim" cols="30" rows="3" placeholder="Szállítási cím"
                             onChange={e => setFormData({...formData, cim: e.target.value})}/>
@@ -66,15 +64,15 @@ function Registration({auth}, data){
       ;
 }
 
-export default withProtected(Registration);
+export default withPublic(Registration);
 
 
-export async function getServerSideProps() {
-    const users = await prisma.felhasznalok.findMany();
-
-    return {
-        props: {
-            data: users,
-        },
-    };
-}
+// export async function getServerSideProps() {
+//     const users = await prisma.felhasznalok.findMany();
+//
+//     return {
+//         props: {
+//             data: users,
+//         },
+//     };
+// }

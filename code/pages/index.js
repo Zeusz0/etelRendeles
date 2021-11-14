@@ -1,7 +1,7 @@
 import Head from "next/head"
 import styles from "../styles/Home.module.css"
 import React from "react";
-import {withProtected } from "../hook/route"
+import {withPublic } from "../hook/route"
 
 function Home({auth}){
 
@@ -24,5 +24,5 @@ function Home({auth}){
   )
 }
 
-export default withProtected(Home);
+export default withPublic(Home);
 

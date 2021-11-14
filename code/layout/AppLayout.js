@@ -9,11 +9,12 @@ export default function AppLayout({ children}) {
   const router = useRouter();
 
   const {logout} = auth;
-  if (router.pathname !== "/login") {
+  if (auth.user) {
     return (
       <main>
         <nav>
-            <div className="logo">
+            <div className="logo"> 
+            <img src="logo.png" alt="Logo" width="90" height="70"/>
             </div>
             <Link href="/">
               <a>Kezdőlap</a>
@@ -37,6 +38,7 @@ export default function AppLayout({ children}) {
       <main>
         <nav>
           <div className="logo">
+          <img src="logo.png" alt="Logo"/>
           </div>
           <Link href="/">
             <a>Kezdőlap</a>

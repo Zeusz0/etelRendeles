@@ -17,8 +17,6 @@ function Login({auth}) {
       <div>
         {error ?? <h1>{error}</h1>}
         <button onClick={loginWithGoogle}>Bejelentkezés Google fiókkal</button>
-        {console.log(user)}
-        <h1>{user?.uid}</h1>
       </div>
     </>
   );

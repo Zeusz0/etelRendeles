@@ -1,6 +1,6 @@
 import Head from "next/head"
 import React from "react";
-import { withProtected } from "../hook/route"
+import { withPublic } from "../hook/route"
 
 
 function About({auth}){
@@ -31,4 +31,4 @@ function About({auth}){
   )
 }
 
-export default withProtected(About);
+export default withPublic(About);

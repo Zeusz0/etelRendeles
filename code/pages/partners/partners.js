@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React, {useState} from "react";
 import {PrismaClient} from "@prisma/client";
+import { withPublic } from "../../hook/route"
 
 const prisma = new PrismaClient();
 
@@ -38,4 +39,4 @@ const Partners = (data) => {
   );
 };
 
-export default Partners;
+export default withPublic(Partners);
