@@ -30,7 +30,7 @@ const Login = ({ data }) => {
 export default Login;
 
 export async function getServerSideProps() {
-  const USERS = await prisma2.felhasznalok.findMany();
+  const USERS = await prisma2.User.findMany();
 
   return {
     props: {
