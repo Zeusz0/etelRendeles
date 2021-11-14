@@ -2,6 +2,7 @@
 
 body {
   background: linear-gradient(rgb(187, 221, 136), ghostwhite);
+  background-image: "étel.jpg";
   color: #333;
   font-family: "Nunito";
   font-weight: bold;

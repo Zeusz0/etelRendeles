@@ -38,7 +38,7 @@ export default function AppLayout({ children}) {
       <main>
         <nav>
           <div className="logo">
-          <img src="logo.png" alt="Logo"/>
+          <img src="logo.png" alt="Logo" width="90" height="70"/>
           </div>
           <Link href="/">
             <a>Kezdőlap</a>
