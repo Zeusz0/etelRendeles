@@ -12,10 +12,10 @@ const Navbar = () => {
       <Link href="/about">
         <a >Rólunk</a>
       </Link>
-      <Link href="/forms/Registration">
+      <Link href="/registration">
         <a>Regisztráció</a> 
       </Link>
-      <Link href="/forms/Login">
+      <Link href="/login">
         <a>Bejelentkezés</a>
       </Link>
     </nav>

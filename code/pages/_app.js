@@ -1,12 +1,19 @@
-import Layout from "../comps/Layout";
-import "../styles/globals.css";
+import Layout from "../comps/Layout"
+import "../config/firebase.config"
+import "../styles/globals.css"
+import { AuthProvider } from "../hook/auth"
+import AuthStateChanged from "../layout/AuthStateChanged"
 
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>
-      <Component {...pageProps} />
-    </Layout> 
-  );
+      <AuthProvider>
+        <AuthStateChanged>
+          <Component {...pageProps} />
+        </AuthStateChanged>
+      </AuthProvider>
+    </Layout>
+  )
 }
 
-export default MyApp;
+export default MyApp

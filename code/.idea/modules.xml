@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD
-      <module fileurl="file://$PROJECT_DIR$/.idea/2021_IB153I-10_Etel.iml" filepath="$PROJECT_DIR$/.idea/2021_IB153I-10_Etel.iml" />
-=======
-      <module fileurl="file://$PROJECT_DIR$/.idea/etelrendeles.iml" filepath="$PROJECT_DIR$/.idea/etelrendeles.iml" />
->>>>>>> c997a268ec08b2867c3a7f2dbf7aae4745bd74e8
+      <module fileurl="file://$PROJECT_DIR$/.idea/code.iml" filepath="$PROJECT_DIR$/.idea/code.iml" />
     </modules>
   </component>
 </project>

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "firebase": "^8.8.1",
     "@next-auth/prisma-adapter": "^0.5.2-next.19",
     "husky": "^7.0.4",
     "lint-staged": "^11.2.6",
