@@ -50,6 +50,9 @@ export default function AppLayout({ children}) {
           <Link href="/login">
             <a>Bejelentkezés</a>
           </Link>
+          <Link href="/partners/partners">
+            <a>Partner éttermeink</a>
+          </Link>
         </nav>
         {children}
       </main>
