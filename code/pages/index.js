@@ -1,10 +1,11 @@
 import Head from "next/head"
-import Image from "next/image"
-import Navbar from "../comps/Navbar"
-import Footer from "../comps/Footer"
 import styles from "../styles/Home.module.css"
+import React from "react";
+import {withProtected } from "../hook/route"
 
-export default function Home() {
+function Home({auth}){
+
+
   return (
     <>
       <Head>
@@ -22,3 +23,6 @@ export default function Home() {
     </>
   )
 }
+
+export default withProtected(Home);
+

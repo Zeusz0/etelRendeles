@@ -1,6 +1,8 @@
 import Head from "next/head"
+import React from "react";
+import { withProtected } from "../hook/route"
 
-const My_orders = () => {
+function My_orders({auth}){
   return (
     <>
       <Head>
@@ -14,4 +16,4 @@ const My_orders = () => {
   )
 }
 
-export default My_orders
+export default withProtected(My_orders);

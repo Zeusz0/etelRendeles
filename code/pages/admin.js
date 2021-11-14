@@ -3,11 +3,11 @@ import { withProtected } from "../hook/route"
 
 
 function Admin({auth}){
-  const {logout} = auth;
+
 
   return(
     <div>
-      <button onClick={logout}>LOGOUT</button>
+      <h1>BE AVGY JELENTKEZVE CSAK OKOSAN !!!</h1>
     </div>
   )
 }

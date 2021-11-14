@@ -1,6 +1,7 @@
 import Head from "next/head"
+import { withProtected } from "../hook/route"
 
-const Profile = () => {
+function Profile({auth}){
   return (
     <>
       <Head>
@@ -14,4 +15,5 @@ const Profile = () => {
   )
 }
 
-export default Profile
+
+export default withProtected(Profile);
