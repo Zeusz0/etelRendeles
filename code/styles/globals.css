@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap");
 
 body {
-  background: linear-gradient(rgb(188,222,137), ghostwhite);
+  background: linear-gradient(rgb(187, 221, 136), ghostwhite);
   color: #333;
   font-family: "Nunito";
   font-weight: bold;
@@ -17,6 +17,7 @@ a {
   min-height: 920px;
   margin: 0 auto;
 }
+
 nav {
   margin: 10px auto 80px;
   padding: 10px 0;
@@ -25,18 +26,47 @@ nav {
   align-items: flex-end;
   border-bottom: 1px solid #ddd;
 }
+
 nav a {
   margin-left: 12px;;
+  float: left;
+  display: block;
+  color: #000000;
+  text-align: center;
+  padding: 10px;
+  font-size: 15px;
 }
 
-nav a:hover, nav a:active{
-  font-size: 120%;
+nav a:hover {
+  background-color: #fccd4c;
+  color: #ffffff;
+}
+
+nav a:active {
+  background-color: #faa93e;
+  color: #ffffff;
 }
 
 nav .logo {
   margin-right: auto;
-  ;
+
 }
+
+button {
+  float: left;
+  display: block;
+  color: #FFFFFF;
+  background-color: #9ec06b; 
+  margin-left: 12px;
+  padding: 10px;
+  font-size: 15px;
+  text-align: center;
+}
+
+button:hover {
+  background: #5b6b429f;
+}
+
 footer {
   display: block;
   text-align: center;
