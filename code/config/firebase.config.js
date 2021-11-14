@@ -1,4 +1,4 @@
-import firebase from "firebase/app"
+import { initializeApp, getApps } from "firebase/app";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -10,6 +10,6 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-if(!firebase.apps.length){
-  firebase.initializeApp(firebaseConfig);
+if(!getApps.length){
+  initializeApp(firebaseConfig);
 }

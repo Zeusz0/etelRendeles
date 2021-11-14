@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react"
-import firebase from "firebase/app"
-import "firebase/auth"
 import useAuth from "../hook/auth"
-import { AuthService } from "../service/AuthService"
+import AuthService  from "../service/AuthService"
 
 export default function AuthStateChanged({children}){
   const {setUser} = useAuth();
@@ -10,10 +8,11 @@ export default function AuthStateChanged({children}){
 
 
   useEffect(() => {
-    firebase.auth().onAuthStateChanged((user)=>{
-      setUser(user);
+    AuthService.waitForUser((userCred)=> {
+      setUser(userCred);
       setLoading(false);
     })
+
     //eslint-disable-next-line
   },[])
 
