@@ -4,19 +4,21 @@ import Image from "next/image";
 const Navbar = () => {
   return (
     <nav>
-      <div className="logo">
-      </div>
+      <div className="logo"></div>
       <Link href="/">
         <a>Kezdőlap</a>
       </Link>
       <Link href="/about">
-        <a >Rólunk</a>
+        <a>Rólunk</a>
       </Link>
       <Link href="/forms/Registration">
-        <a>Regisztráció</a> 
+        <a>Regisztráció</a>
       </Link>
       <Link href="/forms/Login">
         <a>Bejelentkezés</a>
+      </Link>
+      <Link href="/partners/partners">
+        <a>Partner éttermeink</a>
       </Link>
     </nav>
   );

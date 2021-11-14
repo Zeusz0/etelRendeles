@@ -19,7 +19,7 @@ const Login = ({ data }) => {
         <h1>Regisztrált felhasználóink: </h1>
         <ul>
           {data.map((item) => (
-            <li key="item.id">{item.cim}</li>
+            <li key="item.id">{item.name}</li>
           ))}
         </ul>
       </div>
@@ -30,7 +30,7 @@ const Login = ({ data }) => {
 export default Login;
 
 export async function getServerSideProps() {
-  const USERS = await prisma2.User.findMany();
+  const USERS = await prisma2.user.findMany();
 
   return {
     props: {
