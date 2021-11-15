@@ -9,7 +9,7 @@ export function withPublic(Component) {
     const router = useRouter()
 
     if (auth.user) {
-      router.replace("/admin")
+      router.replace("/")
       return <h1>Loading...</h1>
     }
     return <Component auth={auth} {...props}/>

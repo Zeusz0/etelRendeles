@@ -1,9 +1,9 @@
 import Head from "next/head"
 import React from "react";
-import { withPublic } from "../hook/route"
 
 
-function About({auth}){
+
+function About(){
   return (
     <>
       <Head>
@@ -31,4 +31,4 @@ function About({auth}){
   )
 }
 
-export default withPublic(About);
+export default About;

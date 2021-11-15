@@ -42,11 +42,11 @@ function Registration({auth}, data){
                          onChange={e => setFormData({...formData, password_again: e.target.value})}/>
 
                   <input type="tel" placeholder="Telefonszám" name="tel"
-                         onChange={e => setFormData({...formData, telefonszam: e.target.value})}/>
+                         onChange={e => setFormData({...formData, tel: e.target.value})}/>
                   <textarea name="cim" cols="30" rows="3" placeholder="Szállítási cím"
-                            onChange={e => setFormData({...formData, cim: e.target.value})}/>
+                            onChange={e => setFormData({...formData, address: e.target.value})}/>
                   <textarea name="szmlazasicim" cols="30" rows="3" placeholder="Számlázási cím"
-                            onChange={e => setFormData({...formData, szamlazasi_cim: e.target.value})}/>
+                            onChange={e => setFormData({...formData, billingAddress: e.target.value})}/>
                   <p>Miként regisztrál?</p>
                   <input type="radio" name="partner" value="false"
                          onChange={e => setFormData({...formData, partner: false})}/>

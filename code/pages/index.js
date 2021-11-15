@@ -1,9 +1,9 @@
 import Head from "next/head"
 import styles from "../styles/Home.module.css"
 import React from "react";
-import {withPublic } from "../hook/route"
 
-function Home({auth}){
+
+function Home(){
 
 
   return (
@@ -24,5 +24,5 @@ function Home({auth}){
   )
 }
 
-export default withPublic(Home);
+export default Home;
 
