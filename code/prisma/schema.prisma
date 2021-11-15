@@ -62,11 +62,11 @@ model User {
   name          String?
   email         String?   @unique
   emailVerified DateTime?
-  telefonszam   String
-  cim           String
-  szamlazasi_cim String
-  partner Boolean @default(false)
-  admin Boolean @default(false)
+  telefonszam   String?
+  cim           String?
+  szamlazasi_cim String?
+  partner       Boolean? @default(false)
+  admin         Boolean? @default(false)
   image         String?
   accounts      Account[]
   sessions      Session[]
