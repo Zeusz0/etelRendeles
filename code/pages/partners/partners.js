@@ -2,6 +2,7 @@ import Head from "next/head";
 import React, { useState } from "react";
 import { PrismaClient } from "@prisma/client";
 import { withPublic } from "../../hook/route";
+import Link from "next/link";
 
 const prisma = new PrismaClient();
 
@@ -16,11 +17,9 @@ const Partner = ({ data }) => {
         <ul>
           {data.map((item) => (
             <li key="item.id">
-              <span>
-                <strong>{item.name}</strong>
-              </span>
-              <span>{item.email}</span>
-              <span>{item.telefonszam}</span>
+              <Link href={`/etelek/${item.id}`}>
+                <a>{item.name}</a>
+              </Link>
             </li>
           ))}
         </ul>

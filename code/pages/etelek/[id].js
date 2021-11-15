@@ -4,34 +4,45 @@ import styles from "../../styles/Home.module.css";
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
-export default function Etel({ etel }) {
-    return (
-        <div>
-            <Head>
-                <title>{aru.nev}</title>
-                <meta name="keywords" content="Etelrendeles, Etel"/>
-            </Head>
+export default function Etel({ etel, partner }) {
+  return (
+    <div>
+      <Head>
+        <title>{partner.name}</title>
+        <meta name="keywords" content="Etelrendeles, Etel" />
+      </Head>
 
-            <main>
-                <h2>{aru.nev}</h2>
-                <p>{aru.leiras}</p>
-            </main>
-        </div>
-    );
+      <main>
+        {etel.map((item) => (
+          <div key="item.id">
+            <h2>{item.nev}</h2>
+            <p>{item.leiras}</p>
+          </div>
+        ))}
+      </main>
+    </div>
+  );
 }
 
 export async function getServerSideProps(context) {
-    const {id} = context.query
+  const { id } = context.query;
 
-    const etel = await prisma.aru.findFirst({
-        where: {
-            id: id
-        }
-    })
+  const partner = await prisma.user.findFirst({
+    where: {
+      id: id,
+    },
+  });
 
-    return {
-        props: {
-            etel
-        }
-    }
+  const etel = await prisma.aru.findMany({
+    where: {
+      partner_id: id,
+    },
+  });
+
+  return {
+    props: {
+      etel,
+      partner,
+    },
+  };
 }
