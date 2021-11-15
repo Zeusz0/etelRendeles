@@ -1,10 +1,7 @@
 import Head from "next/head";
-import { useState } from "react";
-import { PrismaClient } from "@prisma/client";
+import { signIn } from "next-auth/react";
 
-const prisma2 = new PrismaClient();
-
-const Login = ({ data }) => {
+const Login = () => {
   return (
     <>
       <Head>
@@ -14,27 +11,10 @@ const Login = ({ data }) => {
       <div>
         <h1>Bejelentkezés</h1>
         <h2>Jelentkezz be </h2>
-      </div>
-      <div>
-        <h1>Regisztrált felhasználóink: </h1>
-        <ul>
-          {data.map((item) => (
-            <li key="item.id">{item.name}</li>
-          ))}
-        </ul>
+        <button onClick={() => signIn("github")}>Sign in With GithuB</button>
       </div>
     </>
   );
 };
 
 export default Login;
-
-export async function getServerSideProps() {
-  const USERS = await prisma2.user.findMany();
-
-  return {
-    props: {
-      data: USERS,
-    },
-  };
-}
