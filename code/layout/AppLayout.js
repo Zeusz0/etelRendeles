@@ -55,6 +55,9 @@ export default function AppLayout({ children}) {
           <Link href="/partners/partners">
             <a>Partner éttermeink</a>
           </Link>
+          <Link href="/etelek/etelek">
+            <a>Ételkínálatunk</a>
+          </Link>
         </nav>
         {children}
       </main>

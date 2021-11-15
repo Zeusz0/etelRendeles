@@ -9,7 +9,7 @@ datasource db {
 
 model aru {
   id    Int     @id @default(autoincrement())
-  partner_id Int
+  partner_id String
   nev String
   leiras  String
   ar  Int
@@ -42,6 +42,7 @@ model Account {
   session_state      String?
   oauth_token_secret String?
   oauth_token        String?
+  refresh_token_expires_in Int
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -61,11 +62,11 @@ model User {
   name          String?
   email         String?   @unique
   emailVerified DateTime?
-  telefonszam   String
-  cim           String
-  szamlazasi_cim String
-  partner Boolean @default(false)
-  admin Boolean @default(false)
+  telefonszam   String?
+  cim           String?
+  szamlazasi_cim String?
+  partner       Boolean? @default(false)
+  admin         Boolean? @default(false)
   image         String?
   accounts      Account[]
   sessions      Session[]
