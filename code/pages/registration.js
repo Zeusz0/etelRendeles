@@ -56,7 +56,7 @@ function Registration({auth}, data){
                   <label htmlFor="html">Partner</label>
 
                   <button type="submit">Regisztráció</button>
-                  <button type="submit">Mégse</button>
+                  <button type="reset">Mégse</button>
               </form>
           </div>
       </>

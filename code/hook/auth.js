@@ -18,6 +18,7 @@ export function AuthProvider(props) {
     setError(error ?? "")
   }
 
+
   const logout = async () => {
     await AuthService.logout()
     setUser(null)
