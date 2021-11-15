@@ -16,20 +16,19 @@ function Profile() {
                 <h1>Profil</h1>
             </div>
             <div>
-                <form onSubmit={""}>
-                    <input type="text" placeholder={auth.user?.displayName} name="name" disabled/>
-                    <input type="email" placeholder={auth.user?.email} name="email" disabled/>
-                    <input type="tel" placeholder={auth.user?.tel ?? "Telefonszám"} name="tel"
+                <form className="profileForm" onSubmit={""}>
+                    <input className="szovegdoboz2" type="text" placeholder={auth.user?.displayName} name="name" disabled/>
+                    <input className="szovegdoboz2" type="email" placeholder={auth.user?.email} name="email" disabled/>
+                    <input className="szovegdoboz2" type="tel" placeholder={auth.user?.tel ?? "Telefonszám"} name="tel"
                            onChange={e => setFormData({...formData, tel: e.target.value})}/>
-                    <textarea name="cim" cols="30" rows="3" placeholder={auth.user?.address ?? "Szállítási cím"}
+                    <textarea className="szovegdoboz2" name="cim" cols="30" rows="3" placeholder={auth.user?.address ?? "Szállítási cím"}
                               onChange={e => setFormData({...formData, address: e.target.value})}/>
-                    <textarea name="szmlazasicim" cols="30" rows="3"
-                              placeholder={auth.user?.billingAddress ?? "Szállítási cím"}
+                    <textarea  className="szovegdoboz2" name="szmlazasicim" cols="30" rows="3"
+                              placeholder={auth.user?.billingAddress ?? "Számlázási cím"}
                               onChange={e => setFormData({...formData, billingAddress: e.target.value})}/>
-                    <p>Státusz:</p>
-                    <p>{auth.user?.partner ? "Partner" : "Felhasználó"}</p>
-                    <button type="submit">Mentés</button>
-                    <button type="reset">Mégse</button>
+                    <p>Státusz: {auth.user?.partner ? "Partner" : "Felhasználó"}</p>
+                    <button className="buttonSave" type="submit">Mentés</button>
+                    <button className="buttonCancel" type="reset">Mégse</button>
                 </form>
             </div>
 

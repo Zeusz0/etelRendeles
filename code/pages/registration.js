@@ -34,21 +34,21 @@ function Registration({auth}, data){
               <h1>Regisztráció</h1>
           </div>
           <div>
-              <form onSubmit={registration}>
-                  <input type="text" placeholder="Név" name="name" required
+              <form className="registrationForm" onSubmit={registration}>
+                  <input className="szovegdoboz2" type="text" placeholder="Név" name="name" required
                          onChange={e => setFormData({...formData, name: e.target.value})}/>
-                  <input type="email" placeholder="E-mail cím" name="email" required
+                  <input className="szovegdoboz2" type="email" placeholder="E-mail cím" name="email" required
                          onChange={e => setFormData({...formData, email: e.target.value})}/>
-                  <input type="password" placeholder="Jelszó" name="password" required
+                  <input className="szovegdoboz2" type="password" placeholder="Jelszó" name="password" required
                          onChange={e => setFormData({...formData, password: e.target.value})}/>
-                  <input type="password" placeholder="Jelszó mégegyszer" name="password_again" required
+                  <input className="szovegdoboz2" type="password" placeholder="Jelszó mégegyszer" name="password_again" required
                          onChange={e => setFormData({...formData, password_again: e.target.value})}/>
 
-                  <input type="tel" placeholder="Telefonszám" name="tel" required
+                  <input className="szovegdoboz2" type="tel" placeholder="Telefonszám" name="tel" required
                          onChange={e => setFormData({...formData, tel: e.target.value})}/>
-                  <textarea name="cim" cols="30" rows="3" placeholder="Szállítási cím" required
+                  <textarea className="szovegdoboz2" name="cim" cols="30" rows="3" placeholder="Szállítási cím" required
                             onChange={e => setFormData({...formData, address: e.target.value})}/>
-                  <textarea name="szmlazasicim" cols="30" rows="3" placeholder="Számlázási cím" required
+                  <textarea className="szovegdoboz2" name="szmlazasicim" cols="30" rows="3" placeholder="Számlázási cím" required
                             onChange={e => setFormData({...formData, billingAddress: e.target.value})}/>
                   <p>Miként regisztrál?</p>
                   <input type="radio" name="partner" value="false" required
@@ -57,9 +57,9 @@ function Registration({auth}, data){
                   <input type="radio" name="partner" value="true"
                          onChange={e => setFormData({...formData, partner: true})}/>
                   <label htmlFor="html">Partner</label>
-
-                  <button type="submit">Regisztráció</button>
-                  <button type="reset">Mégse</button>
+            
+                  <button className="buttonSave" type="submit">Regisztráció</button>
+                  <button className="buttonCancel" type="reset">Mégse</button>
               </form>
           </div>
       </>

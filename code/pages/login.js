@@ -29,16 +29,16 @@ function Login({auth}) {
       </div>
       <div>
 
-          <form onSubmit={login}>
-              <input type="email" placeholder="E-mail cím" name="email"
+          <form className="loginForm" onSubmit={login}>
+              <input className="szovegdoboz2" type="email" placeholder="E-mail cím" name="email"
                      onChange={e => setFormData({...formData, email: e.target.value})}/>
-              <input type="password" placeholder="Jelszó" name="password"
+              <input className="szovegdoboz2" type="password" placeholder="Jelszó" name="password"
                      onChange={e => setFormData({...formData, password: e.target.value})}/>
-              <button type="submit">Bejelentkezés</button>
+              <button className="buttonLogin" type="submit">Bejelentkezés</button>
 
           </form>
 
-          <button onClick={loginWithGoogle}>Bejelentkezés Google fiókkal</button>
+          <button className="buttonGoogle" onClick={loginWithGoogle}>Bejelentkezés Google fiókkal</button>
           {error ?? <h1>{error}</h1>}
 
       </div>
