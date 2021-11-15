@@ -1,33 +1,44 @@
 import Head from "next/head";
-import { useState } from "react";
+import React, { useState } from "react";
 import { PrismaClient } from "@prisma/client";
+import Link from "next/link";
 
 const prisma = new PrismaClient();
 
-const Partners = ({ data_user }) => {
+const Partner = ({ data }) => {
   return (
-    <div>
-      <h1> Partnereink listája</h1>
-      <h2>Sajnos nincs jogosultságod ehhez</h2>
-    </div>
+    <>
+      <Head>
+        <title>Partner éttermeink</title>
+        <meta name="keywords" content="Etelrendeles, Partnerek" />
+      </Head>
+      <main>
+        <ul>
+          {data.map((item) => (
+            <li key="item.id">
+              <Link href={`/etelek/${item.id}`}>
+                <a>{item.name}</a>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </main>
+    </>
   );
 };
 
-export default Partners;
+export default Partner;
 
 export async function getServerSideProps() {
-  const users = await prisma.user.findMany({
+  const partnerek = await prisma.user.findMany({
     where: {
       partner: true,
-    },
-    select: {
-      name: true,
     },
   });
 
   return {
     props: {
-      data_user: users,
+      data: partnerek,
     },
   };
 }
