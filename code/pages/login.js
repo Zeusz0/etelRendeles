@@ -39,7 +39,7 @@ function Login({auth}) {
           </form>
 
           <button onClick={loginWithGoogle}>Bejelentkezés Google fiókkal</button>
-        {error ?? <h1>{error}</h1>}
+          {error ?? <h1>{error}</h1>}
 
       </div>
     </>

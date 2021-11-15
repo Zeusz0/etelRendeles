@@ -12,13 +12,16 @@ function Registration({auth}, data){
     const [formData, setFormData] = useState({});
 
 
+
     async function registration(e) {
-        e.preventDefault()
-        const response = await fetch('/api/auth/sign-up', {
-            method: 'POST',
-            body: JSON.stringify(formData)
-        })
-        console.log(formData);
+        if(formData.password === formData.password_again){
+            e.preventDefault()
+            const response = await fetch('/api/auth/sign-up', {
+                method: 'POST',
+                body: JSON.stringify(formData)
+            })
+            console.log(formData);
+        }
     }
 
     return (
@@ -32,23 +35,23 @@ function Registration({auth}, data){
           </div>
           <div>
               <form onSubmit={registration}>
-                  <input type="text" placeholder="Név" name="name"
+                  <input type="text" placeholder="Név" name="name" required
                          onChange={e => setFormData({...formData, name: e.target.value})}/>
-                  <input type="email" placeholder="E-mail cím" name="email"
+                  <input type="email" placeholder="E-mail cím" name="email" required
                          onChange={e => setFormData({...formData, email: e.target.value})}/>
-                  <input type="password" placeholder="Jelszó" name="password"
+                  <input type="password" placeholder="Jelszó" name="password" required
                          onChange={e => setFormData({...formData, password: e.target.value})}/>
-                  <input type="password" placeholder="Jelszó mégegyszer" name="password_again"
+                  <input type="password" placeholder="Jelszó mégegyszer" name="password_again" required
                          onChange={e => setFormData({...formData, password_again: e.target.value})}/>
 
-                  <input type="tel" placeholder="Telefonszám" name="tel"
+                  <input type="tel" placeholder="Telefonszám" name="tel" required
                          onChange={e => setFormData({...formData, tel: e.target.value})}/>
-                  <textarea name="cim" cols="30" rows="3" placeholder="Szállítási cím"
+                  <textarea name="cim" cols="30" rows="3" placeholder="Szállítási cím" required
                             onChange={e => setFormData({...formData, address: e.target.value})}/>
-                  <textarea name="szmlazasicim" cols="30" rows="3" placeholder="Számlázási cím"
+                  <textarea name="szmlazasicim" cols="30" rows="3" placeholder="Számlázási cím" required
                             onChange={e => setFormData({...formData, billingAddress: e.target.value})}/>
                   <p>Miként regisztrál?</p>
-                  <input type="radio" name="partner" value="false"
+                  <input type="radio" name="partner" value="false" required
                          onChange={e => setFormData({...formData, partner: false})}/>
                   <label htmlFor="html">Felhasználó</label>
                   <input type="radio" name="partner" value="true"
