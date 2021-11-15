@@ -19,7 +19,6 @@ export default function Etelek({ data }) {
         })
 
         return await response.json()
-
     }
 
     

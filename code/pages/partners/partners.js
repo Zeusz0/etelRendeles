@@ -1,42 +1,46 @@
 import Head from "next/head";
-import React, {useState} from "react";
-import {PrismaClient} from "@prisma/client";
-import { withPublic } from "../../hook/route"
+import React, { useState } from "react";
+import { PrismaClient } from "@prisma/client";
+import { withPublic } from "../../hook/route";
 
 const prisma = new PrismaClient();
 
-const Partners = (data) => {
-
-  const [formData, setFormData] = useState({});
-
-
-    async function partners(e) {
-        e.preventDefault()
-        const response = await fetch('/api/felhasznalok', {
-            method: 'POST',
-            body: JSON.stringify(formData)
-        })
-        console.log(formData);
-    }
-
+const Partner = ({ data }) => {
   return (
     <>
       <Head>
         <title>Partner éttermeink</title>
-        <meta name="keywords" content="Etelrendeles, Partnerek"/>
+        <meta name="keywords" content="Etelrendeles, Partnerek" />
       </Head>
-      <div>
-        <h1>Partner éttermeink</h1>
-      </div>
-      <div>
+      <main>
         <ul>
-          <li>Pizza Monster</li>
-          <li>Wok n'Go</li>
-          <li>Duna Döner</li>
+          {data.map((item) => (
+            <li key="item.id">
+              <span>
+                <strong>{item.name}</strong>
+              </span>
+              <span>{item.email}</span>
+              <span>{item.telefonszam}</span>
+            </li>
+          ))}
         </ul>
-      </div>
-    </> 
+      </main>
+    </>
   );
 };
 
-export default withPublic(Partners);
+export default Partner;
+
+export async function getServerSideProps() {
+  const partnerek = await prisma.user.findMany({
+    where: {
+      partner: true,
+    },
+  });
+
+  return {
+    props: {
+      data: partnerek,
+    },
+  };
+}

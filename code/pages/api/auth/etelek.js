@@ -10,6 +10,6 @@ export default async(req,res) => {
         data
     })
 
-    req.json(createdEtelek)
+    res.json(createdEtelek)
 
 }
