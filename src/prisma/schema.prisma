@@ -3,28 +3,29 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("DATABASE_SHADOW_URL")
 }
 
 model aru {
-  id    Int     @id @default(autoincrement())
+  id         Int     @id @default(autoincrement())
   partner_id String
-  nev String
-  leiras  String
-  ar  Int
+  nev        String
+  leiras     String
+  ar         Int
   kategoriak String
-  kep String?
-  
+  kep        String?
+
 }
 
 model rendeles {
-  id    Int     @id @default(autoincrement())
-  termekek String
-  kisszalitasi_dij  Int
-  borravalo  Int
-  aruosszeg  Int
-  osszeg  Int
+  id               Int    @id @default(autoincrement())
+  termekek         String
+  kisszalitasi_dij Int
+  borravalo        Int
+  aruosszeg        Int
+  osszeg           Int
 }
 
 model Account {
@@ -42,7 +43,6 @@ model Account {
   session_state      String?
   oauth_token_secret String?
   oauth_token        String?
-  refresh_token_expires_in Int
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -62,11 +62,6 @@ model User {
   name          String?
   email         String?   @unique
   emailVerified DateTime?
-  telefonszam   String?
-  cim           String?
-  szamlazasi_cim String?
-  partner       Boolean? @default(false)
-  admin         Boolean? @default(false)
   image         String?
   accounts      Account[]
   sessions      Session[]
