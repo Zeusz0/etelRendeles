@@ -16,7 +16,7 @@ const Partner = ({ data }) => {
         <ul>
           {data.map((item) => (
             <li key="item.id">
-              <Link href={`/etelek/${item.id}`}>
+              <Link href={`../etelek/${item.id}`}>
                 <a>{item.name}</a>
               </Link>
             </li>
