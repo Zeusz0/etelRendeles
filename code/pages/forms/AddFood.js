@@ -23,20 +23,25 @@ const AddFood = ({ data }) => {
       <div>
         <form onSubmit={saveFood}>
           <input
+            autoComplete="name"
             type="text"
             placeholder="partner_id "
             name="partner_id "
             onChange={(e) =>
               setFormData({ ...formData, partner_id: e.target.value })
             }
+            required
           />
           <input
+            autoComplete="name"
             type="text"
             placeholder="nev"
             name="nev"
             onChange={(e) => setFormData({ ...formData, nev: e.target.value })}
+            required
           />
           <textarea
+            autoComplete="name"
             name="leiras"
             id=""
             cols="30"
@@ -45,24 +50,29 @@ const AddFood = ({ data }) => {
             onChange={(e) =>
               setFormData({ ...formData, leiras: e.target.value })
             }
+            required
           />
           <input
+            autoComplete="0"
             type="number"
             placeholder="ar"
             name="ar"
             onChange={(e) =>
               setFormData({ ...formData, ar: parseInt(e.target.value) })
             }
+            required
           />
           <input
+            autoComplete="name"
             type="text"
             placeholder="kategoriak"
             name="kategoriak"
             onChange={(e) =>
               setFormData({ ...formData, kategoriak: e.target.value })
             }
+            required
           />
-          <button type="submit">Add movie</button>
+          <button type="submit">Étel hozzáadása</button>
         </form>
       </div>
     </>
