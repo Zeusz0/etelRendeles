@@ -14,10 +14,12 @@ export default function Etel({ etel, partner }) {
 
       <main>
         {etel.map((item) => (
-          <div key="item.id">
-            <h2>{item.nev}</h2>
-            <p>{item.leiras}</p>
-          </div>
+          <>
+            <div key="item.id">
+              <h2>{item.nev}</h2>
+              <p>{item.leiras}</p>
+            </div>
+          </>
         ))}
       </main>
     </div>
