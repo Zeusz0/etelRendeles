@@ -36,6 +36,7 @@ export default function Etel({ etel, partner }) {
                 <h2>{item.nev}</h2>
                 <p>{item.ar}Ft</p>
                 <p>{item.leiras}</p>
+                <button>MEGRENDELEM</button>
               </div>
             </>
           ))}

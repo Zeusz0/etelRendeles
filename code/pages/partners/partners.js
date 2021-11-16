@@ -6,6 +6,7 @@ import Link from "next/link";
 const prisma = new PrismaClient();
 
 const Partner = ({ data }) => {
+  const [searchTerm, setSearchTerm] = useState("");
   return (
     <>
       <Head>
@@ -13,14 +14,41 @@ const Partner = ({ data }) => {
         <meta name="keywords" content="Etelrendeles, Partnerek" />
       </Head>
       <main>
+        <input
+          type="text"
+          placeholder="Keresés..."
+          onChange={(event) => {
+            setSearchTerm(event.target.value);
+          }}
+        />
         <ul>
-          {data.map((item) => (
+          {data
+            .filter((val) => {
+              if (setSearchTerm == "") {
+                return val;
+              } else if (
+                val.name.toLowerCase().includes(searchTerm.toLocaleLowerCase())
+              ) {
+                return val;
+              }
+            })
+            .map((val, key) => {
+              return (
+                <div key={key}>
+                  <Link href={`../etelek/${val.id}`}>
+                    <a>{val.name}</a>
+                  </Link>
+                </div>
+              );
+            })}
+
+          {/*data.map((item) => (
             <li key="item.id">
               <Link href={`../etelek/${item.id}`}>
                 <a>{item.name}</a>
               </Link>
             </li>
-          ))}
+          ))*/}
         </ul>
       </main>
     </>

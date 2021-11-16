@@ -9,7 +9,7 @@ const Login = () => {
       </Head>
       <div>
         <h1>Bejelentkezés</h1>
-        <h2>Jelentkezz be </h2>
+        <h2>Ez az opció egyelőre sajnos nem érhető el </h2>
       </div>
     </>
   );

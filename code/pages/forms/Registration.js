@@ -20,7 +20,9 @@ const Registration = ({ data }) => {
         <h1>Regisztrált felhasználóink: </h1>
         <ul>
           {data.map((item) => (
-            <li key="item.id">{item.nev}</li>
+            <>
+              <div key="item.id">{item.name}</div>
+            </>
           ))}
         </ul>
       </div>
@@ -31,7 +33,7 @@ const Registration = ({ data }) => {
 export default Registration;
 
 export async function getServerSideProps() {
-  const users = await prisma.aru.findMany();
+  const users = await prisma.user.findMany();
 
   return {
     props: {

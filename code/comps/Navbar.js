@@ -13,7 +13,7 @@ const Navbar = () => {
         <a>Rólunk</a>
       </Link>
       <Link href="/forms/Registration">
-        <a>Regisztráció</a>
+        <a>Regisztrál felhasználóink</a>
       </Link>
       <Link href="/forms/Login">
         <a>Bejelentkezés</a>
