@@ -1,7 +1,5 @@
 import Head from "next/head";
-import styles from "../../styles/Home.module.css";
 import Link from "next/link";
-
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
@@ -36,6 +34,7 @@ export default function Etel({ etel, partner }) {
               <div key="item.id">
                 <button onClick={(e) => deleteFood(e, item.id)}>TÖRLÉS</button>
                 <h2>{item.nev}</h2>
+                <p>{item.ar}Ft</p>
                 <p>{item.leiras}</p>
               </div>
             </>
