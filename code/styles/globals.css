@@ -22,6 +22,12 @@ li:hover {
   margin: 0 auto;
 }
 
+.box {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
 nav {
   margin: 10px auto 80px;
   padding: 10px 0;

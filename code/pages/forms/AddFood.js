@@ -29,11 +29,15 @@ const AddFood = ({ data }) => {
 
   async function saveFood(form_data) {
     console.log("Called");
-    fetch("/api/addfoodapi", {
+    const resp = await fetch("/api/food", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form_data),
     });
+
+    if (resp.ok) {
+      router.back();
+    }
   }
 
   if (!session) {

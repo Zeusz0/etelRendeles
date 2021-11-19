@@ -1,16 +1,24 @@
 import Head from "next/head";
 import Link from "next/link";
 import { PrismaClient } from "@prisma/client";
+import { useSession } from "next-auth/react";
+import { Stack, HStack, VStack } from "@chakra-ui/react";
+import { Button, ButtonGroup } from "@chakra-ui/react";
+
 const prisma = new PrismaClient();
 
 export default function Etel({ etel, partner }) {
+  const { data: session } = useSession();
   const deleteFood = async (e, value) => {
-    const response = await fetch("/api/deletefood", {
-      method: "POST",
-      body: JSON.stringify(value),
+    const response = await fetch("/api/food", {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id: value }),
     });
 
-    return await response.json();
+    if (response.ok) {
+      location.reload();
+    }
   };
 
   return (
@@ -31,13 +39,19 @@ export default function Etel({ etel, partner }) {
         <main>
           {etel.map((item) => (
             <>
-              <div key="item.id">
-                <button onClick={(e) => deleteFood(e, item.id)}>TÖRLÉS</button>
-                <h2>{item.nev}</h2>
-                <p>{item.ar}Ft</p>
-                <p>{item.leiras}</p>
-                <button>MEGRENDELEM</button>
-              </div>
+              <HStack justifyContent="space-between" key={item.id}>
+                <h2> {item.nev} </h2>
+                <p> {item.ar}Ft </p>
+                <p> {item.leiras} </p>
+                <HStack>
+                  <button>MEGRENDELEM</button>
+                  {session?.id === partner.id && (
+                    <Button onClick={(e) => deleteFood(e, item.id)}>
+                      TÖRLÉS
+                    </Button>
+                  )}
+                </HStack>
+              </HStack>
             </>
           ))}
         </main>
