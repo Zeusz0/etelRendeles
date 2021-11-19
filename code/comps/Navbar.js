@@ -5,7 +5,9 @@ import { useState } from "react";
 const Navbar = () => {
   return (
     <nav>
-      <div className="logo"></div>
+      <div className="logo">
+        <img src="logo.png" alt="Logo" width="90" height="70" />
+      </div>
       <Link href="/">
         <a>Kezdőlap</a>
       </Link>

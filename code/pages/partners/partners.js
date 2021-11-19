@@ -10,7 +10,7 @@ const Partner = ({ data }) => {
   const { data: session } = useSession();
   const [searchTerm, setSearchTerm] = useState("");
   if (session) {
-    console.log(session);
+    console.log(session.user);
     console.log("be vagy jelentkezve");
     return (
       <>
@@ -50,7 +50,7 @@ const Partner = ({ data }) => {
               })}
           </ul>
           <>
-            Signed in as {session.user.email} <br />
+            Signed in as {session.user.id} <br />
             <button onClick={() => signOut()}>Sign out</button>
           </>
         </main>
