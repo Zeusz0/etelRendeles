@@ -1,82 +1,71 @@
 import { PrismaClient } from "@prisma/client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSession } from "next-auth/react";
+import { useForm } from "react-hook-form";
+import { useRouter } from "next/router";
 
 const prisma = new PrismaClient();
 
 const AddFood = ({ data }) => {
-  const [formData, setFormData] = useState({});
-  const [food, setFood] = useState(data);
+  const { data: session } = useSession();
 
-  async function saveFood(e) {
-    e.preventDefault();
-    setFood([...food, formData]);
-    const response = await fetch("/api/addfoodapi", {
+  const { register, handleSubmit, formState } = useForm({
+    defaultValues: {
+      kategoriak: "asd",
+      ar: 1200,
+    },
+  });
+
+  const router = useRouter();
+
+  useEffect(() => {
+    if (
+      session !== undefined &&
+      (session === null || (!session.partner && !session.admin))
+    ) {
+      router.push("/");
+    }
+  }, [router, session]);
+
+  async function saveFood(form_data) {
+    console.log("Called");
+    fetch("/api/addfoodapi", {
       method: "POST",
-      body: JSON.stringify(formData),
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form_data),
     });
-
-    return await response.json();
   }
 
-  return (
-    <>
-      <div>
-        <form onSubmit={saveFood}>
-          <input
-            autoComplete="name"
-            type="text"
-            placeholder="partner_id "
-            name="partner_id "
-            onChange={(e) =>
-              setFormData({ ...formData, partner_id: e.target.value })
-            }
-            required
-          />
-          <input
-            autoComplete="name"
-            type="text"
-            placeholder="nev"
-            name="nev"
-            onChange={(e) => setFormData({ ...formData, nev: e.target.value })}
-            required
-          />
-          <textarea
-            autoComplete="name"
-            name="leiras"
-            id=""
-            cols="30"
-            rows="10"
-            placeholder="leiras"
-            onChange={(e) =>
-              setFormData({ ...formData, leiras: e.target.value })
-            }
-            required
-          />
-          <input
-            autoComplete="0"
-            type="number"
-            placeholder="ar"
-            name="ar"
-            onChange={(e) =>
-              setFormData({ ...formData, ar: parseInt(e.target.value) })
-            }
-            required
-          />
-          <input
-            autoComplete="name"
-            type="text"
-            placeholder="kategoriak"
-            name="kategoriak"
-            onChange={(e) =>
-              setFormData({ ...formData, kategoriak: e.target.value })
-            }
-            required
-          />
-          <button type="submit">Étel hozzáadása</button>
-        </form>
-      </div>
-    </>
-  );
+  if (!session) {
+    return <div>Loading</div>;
+  }
+
+  if (session.admin || session.partner) {
+    return (
+      <>
+        <div>
+          <form onSubmit={handleSubmit(saveFood)}>
+            <input
+              hidden={session.partner}
+              defaultValue={session.partner ? session.id : ""}
+              {...register("partner_id", { required: true })}
+            />
+            <input {...register("nev", { required: true })} />
+            <input
+              type="number"
+              {...register("ar", { required: true, valueAsNumber: true })}
+            />
+            <input {...register("kategoriak", { required: true })} />
+            <input {...register("leiras", { required: true })} />
+
+            <button type="submit">Étel hozzáadása</button>
+          </form>
+        </div>
+      </>
+    );
+  }
+
+  return <></>;
 };
 
 export default AddFood;

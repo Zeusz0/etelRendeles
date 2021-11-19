@@ -2,11 +2,9 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 export default async (req, res) => {
-  const data = JSON.parse(req.body);
-
-  const createdFood = await prisma.aru.create({
-    data,
+  await prisma.aru.create({
+    data: req.body,
   });
 
-  res.json(createdFood);
+  res.status(200).send();
 };
