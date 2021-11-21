@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap");
+
+body {
+  background: linear-gradient(rgb(187, 221, 136), ghostwhite);
+  color: #333;
+  font-family: "Nunito";
+  font-weight: bold;
+  background-repeat: no-repeat;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+li:hover {
+  color: white;
+}
+
+.content {
+  max-width: 960px;
+  min-height: 920px;
+  margin: 0 auto;
+}
+
+.box {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+nav {
+  margin: 10px auto 80px;
+  padding: 10px 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  border-bottom: 1px solid #ddd;
+}
+
+nav a {
+  margin-left: 12px;
+  float: left;
+  display: block;
+  color: #000000;
+  text-align: center;
+  padding: 10px;
+  font-size: 15px;
+}
+
+nav a:hover {
+  background-color: #fccd4c;
+  color: #ffffff;
+}
+
+nav a:active {
+  background-color: #faa93e;
+  color: #ffffff;
+}
+
+nav .logo {
+  margin-right: auto;
+}
+
+button {
+  float: left;
+  display: block;
+  color: #ffffff;
+  border: none;
+  background-color: #9ec06b;
+  margin-left: 12px;
+  padding: 10px;
+  font-size: 15px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+button:hover {
+  background: #5b6b429f;
+}
+
+.buttonSave {
+  float: left;
+  display: block;
+  color: #ffffff;
+  background-color: rgb(180, 250, 67);
+  margin-left: 12px;
+  padding: 10px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.buttonSave:hover {
+  background: rgb(161, 223, 61);
+}
+
+.buttonCancel {
+  float: left;
+  display: block;
+  color: #ffffff;
+  background-color: rgb(250, 125, 67);
+  margin-left: 12px;
+  padding: 10px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.buttonCancel:hover {
+  background: rgb(226, 102, 0);
+}
+
+.buttonLogin {
+  float: left;
+  display: block;
+  color: #ffffff;
+  background-color: rgb(180, 250, 67);
+  margin-left: 12px;
+  padding: 10px;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.buttonLogin:hover {
+  background: rgb(161, 223, 61);
+}
+
+.buttonGoogle {
+  float: left;
+  display: block;
+  color: #000000;
+  background-color: rgb(248, 248, 248);
+  margin-left: 12px;
+  padding: 10px;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.buttonGoogle:hover {
+  background: rgb(233, 233, 233);
+}
+
+form {
+  margin-bottom: 4px;
+}
+
+.loginForm {
+  width: 30%;
+}
+.registrationForm {
+  width: 30%;
+}
+.profileForm {
+  width: 40%;
+}
+
+.szovegdoboz2 {
+  width: 345px;
+  font-size: 13.5px;
+  float: left;
+  display: block;
+  margin-bottom: 4px;
+}
+
+footer {
+  display: block;
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 60px;
+  color: #777;
+  border-top: 1px solid #eaeaea;
+}
