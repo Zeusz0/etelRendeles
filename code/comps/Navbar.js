@@ -29,7 +29,7 @@ const Navbar = () => {
             <Link href="/profile">
                 <a>Profil</a>
             </Link>
-          <a onClick={() => signOut()}>Sign out</a>
+          <a onClick={() => signOut()}>Kijelentkezés</a>
         </>
       )}
       {!session && <a onClick={() => signIn()}>Bejelentkezés</a>}
