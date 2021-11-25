@@ -82,7 +82,7 @@ const Profile = ({data}) => {
 export default Profile
 
 export async function getServerSideProps() {
-    const partnerek = await prisma.User.findMany();
+    const partnerek = await prisma.user.findMany();
 
     return {
         props: {
