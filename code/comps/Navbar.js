@@ -25,6 +25,10 @@ const Navbar = () => {
           <Link href="/partners/partners">
             <a>Partner éttermeink</a>
           </Link>
+
+            <Link href="/profile">
+                <a>Profil</a>
+            </Link>
           <a onClick={() => signOut()}>Sign out</a>
         </>
       )}
