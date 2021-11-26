@@ -14,7 +14,7 @@ export default function Home() {
       <div>
         <h1 className={styles.title}>Kezdőlap</h1>
         <p>
-          Halihó! Megéheztél? Vagy csak egy kis desszertre vágysz délután?
+          Halihó! Megéheztél? Vagy csak egy kicsi desszertre vágysz délután?
           Esetleg az esti bulihoz kéne egy hatalmas adag pizza? Bármilyen
           napszakban állnak rendelkezésedre partnereink, válogass kedvedre és
           élvezd az ételt a saját otthonodban.
