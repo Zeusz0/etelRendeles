@@ -19,6 +19,7 @@ export default function Home() {
           napszakban állnak rendelkezésedre partnereink, válogass kedvedre és
           élvezd az ételt a saját otthonodban.
         </p>
+        <img src="diagrammok_kepernyokep/étel.jpg" alt="Étel" width="500" height="600"></img>
       </div>
     </>
   );
