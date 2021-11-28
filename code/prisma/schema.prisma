@@ -8,40 +8,40 @@ datasource db {
 }
 
 model aru {
-  id    Int     @id @default(autoincrement())
-  partner_id String
-  nev String
-  leiras  String
-  ar  Int
-  kategoriak String
-  kep String?
-  
+  id          Int       @id @default(autoincrement())
+  partner_id  String
+  nev         String
+  leiras      String
+  ar          Int
+  kategoriak  String
+  kep         String?
+  rendeles    rendeles? @relation(fields: [rendeles_id], references: [id])
+  rendeles_id Int
 }
 
 model rendeles {
-  id    Int     @id @default(autoincrement())
-  termekek String
-  kisszalitasi_dij  Int
-  borravalo  Int
-  aruosszeg  Int
-  osszeg  Int
+  id         Int      @id @default(autoincrement())
+  datum      DateTime @default(now())
+  osszeg     Int
+  partner_id String
+  aru        aru[]
 }
 
 model Account {
-  id                 String  @id @default(cuid())
-  userId             String
-  type               String
-  provider           String
-  providerAccountId  String
-  refresh_token      String?
-  access_token       String?
-  expires_at         Int?
-  token_type         String?
-  scope              String?
-  id_token           String?
-  session_state      String?
-  oauth_token_secret String?
-  oauth_token        String?
+  id                       String  @id @default(cuid())
+  userId                   String
+  type                     String
+  provider                 String
+  providerAccountId        String
+  refresh_token            String?
+  access_token             String?
+  expires_at               Int?
+  token_type               String?
+  scope                    String?
+  id_token                 String?
+  session_state            String?
+  oauth_token_secret       String?
+  oauth_token              String?
   refresh_token_expires_in Int
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -58,18 +58,18 @@ model Session {
 }
 
 model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String?   @unique
-  emailVerified DateTime?
-  telefonszam   String?
-  cim           String?
+  id             String    @id @default(cuid())
+  name           String?
+  email          String?   @unique
+  emailVerified  DateTime?
+  telefonszam    String?
+  cim            String?
   szamlazasi_cim String?
-  partner       Boolean? @default(false)
-  admin         Boolean? @default(false)
-  image         String?
-  accounts      Account[]
-  sessions      Session[]
+  partner        Boolean?  @default(false)
+  admin          Boolean?  @default(false)
+  image          String?
+  accounts       Account[]
+  sessions       Session[]
 }
 
 model VerificationToken {
