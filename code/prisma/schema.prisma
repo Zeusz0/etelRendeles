@@ -16,15 +16,15 @@ model aru {
   kategoriak  String
   kep         String?
   rendeles    rendeles? @relation(fields: [rendeles_id], references: [id])
-  rendeles_id Int?
+  rendeles_id Int
 }
 
 model rendeles {
   id         Int      @id @default(autoincrement())
+  datum      DateTime @default(now())
+  osszeg     Int
   partner_id String
   aru        aru[]
-  idopont    DateTime @default(now())
-  osszeg     Int
 }
 
 model Account {
