@@ -8,7 +8,8 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className="logo"></div>
+      <div className="logo">
+      </div>
       <Link href="/">
         <a>Kezdőlap</a>
       </Link>

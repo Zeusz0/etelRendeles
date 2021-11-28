@@ -1,6 +1,6 @@
 import Head from "next/head"
 import {PrismaClient} from "@prisma/client";
-import {useState, useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import {useSession} from "next-auth/react";
 import {useForm} from "react-hook-form";
 import {useRouter} from "next/router";
@@ -9,7 +9,6 @@ const prisma = new PrismaClient();
 
 const Profile = ({data}) => {
     const {data: session} = useSession();
-
     const {register, handleSubmit, formState} = useForm({
         defaultValues: {
             telefonszam: "",
@@ -19,15 +18,6 @@ const Profile = ({data}) => {
     });
 
     const router = useRouter();
-
-    useEffect(() => {
-        if (
-            session !== undefined &&
-            (session === null || (!session.partner && !session.admin))
-        ) {
-            router.push("/");
-        }
-    }, [router, session]);
 
     async function saveUser(form_data) {
         console.log("Called");
@@ -41,11 +31,8 @@ const Profile = ({data}) => {
             router.back();
         }
     }
-
-    if (!session) {
-        return <div>Loading</div>;
-    }
-    if (session.admin || session.partner) {
+    
+    if (session) {
         return (
             <>
                 <Head>
@@ -58,17 +45,22 @@ const Profile = ({data}) => {
                 <div>
                     <form onSubmit={handleSubmit(saveUser)}>
                         <input
-                            hidden={session.partner}
+                            hidden={session}
                             defaultValue={session.partner ? session.id : ""}
                             {...register("id", { required: true })}
                         />
+                        <label>Név:</label>
                         <input {...register("name", { required: true })} />
+                        <label>E-mail cím:</label>
                         <input {...register("email", { required: true })} />
+                        <label>Telefonszám:</label>
                         <input {...register("telefonszam", { required: true })} />
+                        <label>Lakcím:</label>
                         <input {...register("cim", { required: true })} />
+                        <label>Számlázási cím:</label>
                         <input {...register("szamlazasi cim", { required: true })} />
                         <p>Státusz:</p>
-                        <p>Partner : Felhasználó</p>
+                        <p>Partner / Felhasználó</p>
                         <button type="submit">Mentés</button>
                         <button type="reset">Mégse</button>
                     </form>
@@ -76,7 +68,13 @@ const Profile = ({data}) => {
             </>
         )
     }
-    return <></>;
+    return (
+        <>
+            <div>
+                <h1>Kérlek jelentkezz be</h1>
+            </div>
+        </>
+    );
 }
 
 export default Profile
