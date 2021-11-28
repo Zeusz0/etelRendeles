@@ -124,7 +124,7 @@ button:hover {
   background: rgb(161, 223, 61);
 }
 
-.buttonGoogle {
+.buttonGithub {
   float: left;
   display: block;
   color: #000000;
@@ -136,7 +136,7 @@ button:hover {
   margin-top: 10px;
 }
 
-.buttonGoogle:hover {
+.buttonGithub:hover {
   background: rgb(233, 233, 233);
 }
 

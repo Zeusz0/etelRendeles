@@ -16,15 +16,26 @@ model aru {
   kategoriak  String
   kep         String?
   rendeles    rendeles? @relation(fields: [rendeles_id], references: [id])
+<<<<<<< HEAD
   rendeles_id Int
+=======
+  rendeles_id Int?
+>>>>>>> 26a3323a53f9af38f362be2ad8e1247466e11119
 }
 
 model rendeles {
   id         Int      @id @default(autoincrement())
+<<<<<<< HEAD
   datum      DateTime @default(now())
   osszeg     Int
   partner_id String
   aru        aru[]
+=======
+  partner_id String
+  aru        aru[]
+  idopont    DateTime @default(now())
+  osszeg     Int
+>>>>>>> 26a3323a53f9af38f362be2ad8e1247466e11119
 }
 
 model Account {
@@ -78,4 +89,8 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 26a3323a53f9af38f362be2ad8e1247466e11119
