@@ -8,8 +8,7 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className="logo">
-      </div>
+      <div className="logo"></div>
       <Link href="/">
         <a>Kezdőlap</a>
       </Link>
@@ -27,9 +26,12 @@ const Navbar = () => {
             <a>Partner éttermeink</a>
           </Link>
 
-            <Link href="/profile">
-                <a>Profil</a>
-            </Link>
+          <Link href="/profile">
+            <a>Profil</a>
+          </Link>
+          <Link href="/my_orders">
+            <a>Rendeléseim</a>
+          </Link>
           <a onClick={() => signOut()}>Kijelentkezés</a>
         </>
       )}

@@ -2,13 +2,28 @@ import Head from "next/head";
 import Link from "next/link";
 import { PrismaClient } from "@prisma/client";
 import { useSession } from "next-auth/react";
-import { Stack, HStack, VStack } from "@chakra-ui/react";
-import { Button, ButtonGroup } from "@chakra-ui/react";
+import { Stack, HStack, VStack, Text, Heading } from "@chakra-ui/react";
+import { Button, ButtonGroup, IconButton } from "@chakra-ui/react";
+import { MinusIcon } from "@chakra-ui/icons";
+import { useState, useMemo } from "react";
 
 const prisma = new PrismaClient();
 
 export default function Etel({ etel, partner }) {
   const { data: session } = useSession();
+
+  const etelObject = useMemo(
+    () => Object.fromEntries(etel.map(({ id, ...rest }) => [id, rest])),
+    [etel]
+  );
+
+  const [cart, setCart] = useState({});
+
+  const filteredCartEntries = useMemo(
+    () => Object.entries(cart).filter(([, quantity]) => quantity > 0),
+    [cart]
+  );
+
   const deleteFood = async (e, value) => {
     const response = await fetch("/api/food", {
       method: "DELETE",
@@ -20,6 +35,26 @@ export default function Etel({ etel, partner }) {
       location.reload();
     }
   };
+
+  async function megrendeles() {
+    const resp = await fetch("/api/cart", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        osszeg: filteredCartEntries.reduce(
+          (acc, [id, quantity]) => acc + etelObject[id].ar * quantity,
+          0
+        ),
+        partner_id: session.id,
+        aru: filteredCartEntries.map(([id]) => +id),
+        etterem: partner.name,
+      }),
+    });
+
+    /*if (resp.ok) {
+      router.back();
+    }*/
+  }
 
   return (
     <>
@@ -44,7 +79,16 @@ export default function Etel({ etel, partner }) {
                 <p> {item.ar}Ft </p>
                 <p> {item.leiras} </p>
                 <HStack>
-                  <button>MEGRENDELEM</button>
+                  <button
+                    onClick={() =>
+                      setCart((prev) => ({
+                        ...prev,
+                        [item.id]: (prev[item.id] ?? 0) + 1,
+                      }))
+                    }
+                  >
+                    HOZZÁAD
+                  </button>
                   {session?.id === partner.id && (
                     <Button onClick={(e) => deleteFood(e, item.id)}>
                       TÖRLÉS
@@ -54,6 +98,42 @@ export default function Etel({ etel, partner }) {
               </HStack>
             </>
           ))}
+
+          {filteredCartEntries.length > 0 && (
+            <HStack justifyContent="space-between">
+              <Heading as="h2">Kosár tartalma</Heading>
+              <Button onClick={() => setCart({})}>Kosár ürítése</Button>
+            </HStack>
+          )}
+          {filteredCartEntries.map(([id, quantity]) => (
+            <HStack justifyContent="space-between">
+              <Text>{etelObject[id].nev}</Text>
+              <HStack>
+                <Text>
+                  {quantity}db ({etelObject[id].ar * quantity} Ft)
+                </Text>
+                <IconButton
+                  icon={<MinusIcon p={3} />}
+                  onClick={() =>
+                    setCart((prev) => ({ ...prev, [id]: prev[id] - 1 }))
+                  }
+                />
+              </HStack>
+            </HStack>
+          ))}
+          {filteredCartEntries.length > 0 && (
+            <HStack justifyContent="space-between">
+              <Text>
+                Összesen:{" "}
+                {filteredCartEntries.reduce(
+                  (acc, [id, quantity]) => acc + etelObject[id].ar * quantity,
+                  0
+                )}{" "}
+                Ft
+              </Text>
+              <Button onClick={megrendeles}>Megrendelem</Button>
+            </HStack>
+          )}
         </main>
       </div>
     </>

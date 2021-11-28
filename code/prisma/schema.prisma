@@ -23,6 +23,7 @@ model rendeles {
   partner_id String?
   aruk        Int[]
   osszeg     Int?
+  etterem String?
 }
 
 model Account {

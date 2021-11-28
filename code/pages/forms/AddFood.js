@@ -28,7 +28,6 @@ const AddFood = ({ data }) => {
   }, [router, session]);
 
   async function saveFood(form_data) {
-    console.log("Called");
     const resp = await fetch("/api/food", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
