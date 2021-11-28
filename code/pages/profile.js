@@ -31,7 +31,7 @@ const Profile = ({data}) => {
             router.back();
         }
     }
-    
+
     if (session) {
         return (
             <>
