@@ -17,6 +17,11 @@ const Navbar = () => {
       </Link>
       {session && (
         <>
+          {!session.partner && (
+            <Link href="/forms/NewPartner">
+              <a>Partnerré válás</a>
+            </Link>
+          )}
           {session.partner && (
             <Link href="/forms/Registration">
               <a>Regisztrált felhasználóink</a>

@@ -13,6 +13,7 @@ const My_orders = ({ rendeles, aruk }) => {
   if (session) {
     return (
       <>
+        <h1>Rendeléseim</h1>
         <p>
           {rendeles
             .filter((item) => item.partner_id === session.id)

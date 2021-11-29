@@ -17,6 +17,18 @@ export default async (req, res) => {
       },
     });
   }
+  if (req.method == "GET") {
+    /* await prisma.user.update({
+      where: {
+        id: req.body,
+      },
+      data: {
+        partner: true,
+      },
+    }); */
+    console.log(req.body);
+  }
+
   if (req.method === "DELETE") {
     await prisma.user.delete({
       where: {
