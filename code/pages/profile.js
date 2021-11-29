@@ -49,6 +49,7 @@ const Profile = ({ data }) => {
           <form onSubmit={handleSubmit(saveUser)}>
             <input
               hidden={session}
+              placeholder="userid"
               defaultValue={session.partner ? session.id : ""}
               {...register("id", { required: true })}
             />
