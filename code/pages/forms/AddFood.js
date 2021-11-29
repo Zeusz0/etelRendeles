@@ -50,16 +50,24 @@ const AddFood = ({ data }) => {
           <form onSubmit={handleSubmit(saveFood)}>
             <input
               hidden={session.partner}
+              placeholder="userid"
               defaultValue={session.partner ? session.id : ""}
               {...register("partner_id", { required: true })}
             />
-            <input {...register("nev", { required: true })} />
+            <input placeholder="nev" {...register("nev", { required: true })} />
             <input
+              placeholder="ar"
               type="number"
               {...register("ar", { required: true, valueAsNumber: true })}
             />
-            <input {...register("kategoriak", { required: true })} />
-            <input {...register("leiras", { required: true })} />
+            <input
+              placeholder="kategoriak"
+              {...register("kategoriak", { required: true })}
+            />
+            <input
+              placeholder="leiras"
+              {...register("leiras", { required: true })}
+            />
 
             <button type="submit">Étel hozzáadása</button>
           </form>
