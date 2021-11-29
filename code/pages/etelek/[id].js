@@ -6,11 +6,14 @@ import { Stack, HStack, VStack, Text, Heading } from "@chakra-ui/react";
 import { Button, ButtonGroup, IconButton } from "@chakra-ui/react";
 import { MinusIcon } from "@chakra-ui/icons";
 import { useState, useMemo } from "react";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const prisma = new PrismaClient();
 
 export default function Etel({ etel, partner }) {
   const { data: session } = useSession();
+  const router = useRouter();
 
   const etelObject = useMemo(
     () => Object.fromEntries(etel.map(({ id, ...rest }) => [id, rest])),
@@ -36,6 +39,12 @@ export default function Etel({ etel, partner }) {
     }
   };
 
+  useEffect(() => {
+    if (session !== undefined && session === null) {
+      router.push("/");
+    }
+  }, [router, session]);
+
   async function megrendeles() {
     const resp = await fetch("/api/cart", {
       method: "POST",
@@ -51,9 +60,9 @@ export default function Etel({ etel, partner }) {
       }),
     });
 
-    /*if (resp.ok) {
-      router.back();
-    }*/
+    if (resp.ok) {
+      router.push("/my_orders");
+    }
   }
 
   return (
@@ -106,7 +115,7 @@ export default function Etel({ etel, partner }) {
             </HStack>
           )}
           {filteredCartEntries.map(([id, quantity]) => (
-            <HStack justifyContent="space-between">
+            <HStack justifyContent="space-between" key={id}>
               <Text>{etelObject[id].nev}</Text>
               <HStack>
                 <Text>
