@@ -70,7 +70,7 @@ export default function Etel({ etel, partner }) {
       <div>
         <h1>Üdvözlünk {partner.name} étterem oldalán</h1>
 
-        {session?.id === partner.id && (
+        {(session?.id === partner.id || session.admin) && (
           <Link href={`../forms/AddFood`}>
             <a>
               <h1>Hozzá adnál Valami finomat?</h1>
@@ -102,7 +102,7 @@ export default function Etel({ etel, partner }) {
                   >
                     HOZZÁAD
                   </button>
-                  {session?.id === partner.id && (
+                  {(session?.id === partner.id || session.admin) && (
                     <Button onClick={(e) => deleteFood(e, item.id)}>
                       TÖRLÉS
                     </Button>
