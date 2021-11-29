@@ -8,6 +8,7 @@ export default async (req, res) => {
         osszeg: req.body.osszeg,
         partner_id: req.body.partner_id,
         aruk: req.body.aru,
+        etterem: req.body.etterem,
       },
     });
     console.log(req.body);

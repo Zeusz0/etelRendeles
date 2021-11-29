@@ -19,11 +19,22 @@ const My_orders = ({ rendeles, aruk }) => {
             .map((item) => (
               <>
                 <HStack justifyContent="space-between" key={item.id}>
-                  <p>Étterem: {item.etterem} Ft</p>
-                  <p>Fizetett összeg: {item.osszeg} Ft</p>
-                  <p>Rendelés dátuma: {item.datum.toString()}</p>
-                  <p>Rendelt ételek: </p>
-                  {item.aruk}
+                  <p>| Étterem: {item.etterem}</p>
+                  <p>| Fizetett összeg: {item.osszeg} Ft</p>
+                  <p>| Rendelés dátuma: {item.datum.toString()}</p>
+                  <p>| Rendelt ételek: </p>
+                  {item.aruk.map((kaja) => (
+                    <HStack justifyContent="space-between" key={kaja}>
+                      {aruk
+                        .filter((termek) => termek.id === kaja)
+                        .map((termek) => (
+                          <>
+                            <p>{termek.nev}</p>
+                            <p>|</p>
+                          </>
+                        ))}
+                    </HStack>
+                  ))}
                 </HStack>
               </>
             ))}
