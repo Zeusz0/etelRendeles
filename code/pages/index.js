@@ -21,12 +21,14 @@ export default function Home() {
         </p>
         <div id="indexkep">
           <Image
+            alt=""
             className="bottom"
             src={"/etel.jpg"}
             width={1500}
             height={600}
           />
           <Image
+            alt=""
             className="top"
             src={"/./logo.png"}
             width={1500}
