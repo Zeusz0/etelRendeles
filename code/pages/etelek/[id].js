@@ -68,11 +68,15 @@ export default function Etel({ etel, partner }) {
   return (
     <>
       <div>
-        <Link href={`../forms/AddFood`}>
-          <a>
-            <h1>Hozzá adnál Valami finomat?</h1>
-          </a>
-        </Link>
+        <h1>Üdvözlünk {partner.name} étterem oldalán</h1>
+
+        {session?.id === partner.id && (
+          <Link href={`../forms/AddFood`}>
+            <a>
+              <h1>Hozzá adnál Valami finomat?</h1>
+            </a>
+          </Link>
+        )}
       </div>
       <div>
         <Head>

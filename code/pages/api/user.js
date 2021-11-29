@@ -10,23 +10,12 @@ export default async (req, res) => {
       },
       data: {
         name: req.body.name,
-        email: req.body.email[0],
-        telefonszam: req.body.telefonszam[0],
-        cim: req.body.cim[0],
-        szamlazasi_cim: req.body.szamlazasi_cim[0],
+        email: req.body.email,
+        telefonszam: req.body.telefonszam,
+        cim: req.body.cim,
+        szamlazasi_cim: req.body.szamlazasi_cim,
       },
     });
-  }
-  if (req.method == "GET") {
-    /* await prisma.user.update({
-      where: {
-        id: req.body,
-      },
-      data: {
-        partner: true,
-      },
-    }); */
-    console.log(req.body);
   }
 
   if (req.method === "DELETE") {
